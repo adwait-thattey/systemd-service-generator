@@ -35,10 +35,10 @@ $python3_path $cur_dir/service_generator.py
 
 # copy all files to install directory
 cp -f $cur_dir/config.sh $install_directory
-cp -f $cur_dir/main_script.sh $install_directory
+# cp -f $cur_dir/main_script.sh $install_directory
 cp -f $cur_dir/ready_notify.py $install_directory
 cp -f $cur_dir/watchdog_notify.py $install_directory
-cp -f $cur_dir/$name.service $install_directory
+# cp -f $cur_dir/$name.service $install_directory
 
 chmod u+rwx $install_directory/*
 
