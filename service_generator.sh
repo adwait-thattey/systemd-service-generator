@@ -11,26 +11,25 @@ source ./config.sh
 
 cur_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-overwrite_flag=0
 
-if [ ! -d "/opt/services" ]; then
-    mkdir /opt/services
+if [ ! -d $install_location ]; then
+    mkdir -p /opt/services
 
 fi
 
-if [ -d "/opt/services/$name" ] || [ -f "/etc/systemd/system/$name.service" ]; then
+if [ -d "$install_location/$name" ] || [ -f "/etc/systemd/system/$name.service" ]; then
     echo "A service of this name already exists. Do you want to overwrite? (Press 1 or 2)"
     select yn in "Yes" "No"; do
         case $yn in
-            Yes ) overwrite_flag=1; break;;
+            Yes ) break;;
             No ) exit;;
         esac
     done
 else
-    mkdir /opt/services/$name
+    mkdir $install_location/$name
 fi
 
-install_directory=/opt/services/$name
+install_directory=$install_location/$name
 
 $python3_path $cur_dir/service_generator.py
 

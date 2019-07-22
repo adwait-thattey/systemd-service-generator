@@ -5,6 +5,9 @@
 # install using: pip install sdnotify  (in python3)
 python3_path="/opt/rh/rh-python36/root/usr/bin/python"
 
+# The place where all the files will be kept. Location will be $install_location/$name
+install_location="/opt/services"
+
 # name of the service. only alphabets,numbers and underscores allowed. Should start with an alaphabet
 name="trial_002"
 
@@ -29,7 +32,8 @@ START_SCRIPTS[1]="echo \"Another sample command\" "
 # script should exit with code 0 if everything is fine or 1 if error occured
 startup_check_script="/home/coderdude/keycloak/startup_check.sh"
 
-#The startup_check will be performed after these many seconds of starting the program
+# The startup_check will be performed after these many seconds of starting the program
+# Keep this big enough to allow your commands to strt properly
 startup_check_delay=30
 
 # This script checks if the application is working properly. 
