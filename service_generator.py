@@ -55,7 +55,7 @@ WantedBy=multi-user.target
 
 """
 
-service_file_path = os.path.join(cur_dir, f'{name}.service')
+service_file_path = os.path.join(install_directory, f'{name}.service')
 service_file = open(service_file_path, mode='w')
 service_file.write(unit_template)
 service_file.write(service_template)
@@ -204,7 +204,7 @@ done
 
 """
 
-service_script_path = os.path.join(cur_dir, f'main_script.sh')
+service_script_path = os.path.join(install_directory, f'main_script.sh')
 service_script_file = open(service_script_path, mode="w")
 service_script_file.write(script_code)
 service_script_file.close()
