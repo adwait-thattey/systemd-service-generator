@@ -13,7 +13,7 @@ cur_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
 if [ ! -d $install_location ]; then
-    mkdir -p /opt/services
+    mkdir -p $install_location
 
 fi
 
